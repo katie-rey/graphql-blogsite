@@ -1,15 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Link from 'next/link'
-
-const categories = [
-  { name: 'New Zealand', slug: 'new-zealand' },
-  { name: 'New York', slug: 'new-york' },
-  { name: 'Devon', slug: 'devon' },
-  { name: 'Cardiff', slug: 'cardiff' },
-]
+import { getCategories } from '@/services'
 
 const Header = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    getCategories().then((newCategories) => setCategories(newCategories))
+  }, [])
+
   return (
     <div className="container mx-auto px-10 mb-8">
       <div className="border-b w-full inline-block border-blue-200 py-8">
