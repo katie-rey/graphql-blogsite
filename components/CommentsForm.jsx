@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import { submitComment } from '../services'
 
@@ -30,25 +30,27 @@ function CommentsForm({ slug }) {
     const commentObj = { name, email, comment, slug }
 
     if (storeData) {
-      localStorage.setItem('name', name)
-      localStorage.setItem('email', email)
+      window.localStorage.setItem('name', name)
+      window.localStorage.setItem('email', email)
     } else {
-      localStorage.removeItem('name')
-      localStorage.removeItem('email')
+      window.localStorage.removeItem('name')
+      window.localStorage.removeItem('email')
     }
 
     submitComment(commentObj).then((res) => {
       setShowSuccessMessage(true)
 
       setTimeout(() => {
-        showSuccessMessage(false)
+        setShowSuccessMessage(false)
       }, 3000)
     })
   }
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h1 className="text-xl mb-8 font-semibold border-b pb-4">Comment test</h1>
+      <h1 className="text-xl mb-8 font-semibold border-b pb-4">
+        Leave a reply
+      </h1>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           ref={commentEl}
@@ -90,7 +92,7 @@ function CommentsForm({ slug }) {
             className="text-gray-500 cursor-pointer ml-2"
             htmlFor="storeData"
           >
-            Save my name and email for the next timeI comment
+            Save my name and email for the next time
           </label>
         </div>
       </div>
