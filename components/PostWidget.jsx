@@ -9,7 +9,9 @@ const PostWidget = ({ categories, slug }) => {
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(categories, slug).then((result) => setRelatedPosts(result))
+      getSimilarPosts(categories, slug).then((result) =>
+        setRelatedPosts(result)
+      )
     } else {
       getRecentPosts().then((result) => setRelatedPosts(result))
     }
@@ -25,6 +27,7 @@ const PostWidget = ({ categories, slug }) => {
           <div key={post.title} className="flex items-center w-full mb-4">
             <div className="w-16 flex-none">
               <img
+                key={post.title}
                 className="align-middle rounded-full"
                 src={post.featuredImage.url}
                 alt={post.title}

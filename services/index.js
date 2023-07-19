@@ -65,7 +65,10 @@ export const getSimilarPosts = async (categories, slug) => {
   const query = gql`
     query GetPostDetails($slug: String!, $categories: [String!]) {
       posts(
-        where: { slug_not: $slug, AND: { categories_some: { slug_in: $categories } } }
+        where: {
+          slug_not: $slug
+          AND: { categories_some: { slug_in: $categories } }
+        }
         last: 3
       ) {
         title
@@ -130,4 +133,12 @@ export const getPostDetails = async (slug) => {
   const result = await request(graphqlAPI, query, { slug })
 
   return result.post
+}
+
+export const submitComment = async (obj) => {
+  const result = await fetch('/api/comments', {
+    method: 'POST',
+    body: JSON.stringify(obj),
+  })
+  return result.json()
 }
