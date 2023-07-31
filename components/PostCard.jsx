@@ -30,13 +30,13 @@ const PostCard = ({ post }) => (
     </h1>
     <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
       <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 items-center">
-        <img
-          unoptimized
+        <Image
+          unoptimized="true"
           loader={graphCMSImageLoader}
           alt={post.author.name}
-          height="30px"
-          width="30px"
-          className="align-middle rounded-full"
+          height={30}
+          width={30}
+          className="align-middle ed-full"
           src={post.author.photo.url}
         />
         <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">
