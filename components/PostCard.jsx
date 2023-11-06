@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { graphCMSImageLoader } from '../util'
 
 const PostCard = ({ post }) => (
-  <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+  <div className="bg-white shadow-lg p-0 lg:p-8 pb-12 mb-8">
     {/* <div className="relative shadow-md inline-block w-full h-60 lg:h-80 mb-6">
       <Image
         unoptimized
@@ -21,7 +21,7 @@ const PostCard = ({ post }) => (
       <img
         src={post.featuredImage.url}
         alt=""
-        className="object-top absolute h-80 w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+        className="object-top absolute h-80 w-full object-cover  shadow-lg "
       />
     </div>
 

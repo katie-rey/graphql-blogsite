@@ -16,7 +16,8 @@ body {
     height: 100vh;
     /* //background: linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
     // background: #D3D3D3; */
-    background-image: url('../public/bg.jpg');
+    /* background-image: url('../public/bg.jpg'); */
+    background-color: rgb(214, 221, 215);
     position: fixed;
     left: 0;
     top: 0;
@@ -25,6 +26,17 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+}
+
+.main-image {
+  background-image: url('../public/IMG_4339.jpeg');
+  /* position: fixed; */
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .text-shadow {
