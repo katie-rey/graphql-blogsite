@@ -41,7 +41,7 @@ export const getPosts = async () => {
 
 export const getCategories = async () => {
   const query = gql`
-    query GetGategories {
+    query GetCategories {
       categories {
         name
         slug
@@ -183,7 +183,7 @@ export const getCategoryPost = async (slug) => {
 
 export const getFeaturedPosts = async () => {
   const query = gql`
-    query GetCategoryPost() {
+    query GetFeaturedPosts() {
       posts(where: {featuredPost: true}) {
         author {
           name
@@ -203,6 +203,7 @@ export const getFeaturedPosts = async () => {
 
   const result = await request(graphqlAPI, query)
 
+  console.log(result.posts)
   return result.posts
 }
 

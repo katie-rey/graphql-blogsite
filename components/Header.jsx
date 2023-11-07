@@ -3,15 +3,22 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { getCategories } from '@/services'
 
-const Header = () => {
+const Header = ({ backgroundColor = '' }) => {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
     getCategories().then((newCategories) => setCategories(newCategories))
   }, [])
 
+  //
+
+  //
+
   return (
-    <nav class=" mx-auto px-10 w-full fixed top-0 z-40">
+    <nav
+      class="nav mx-auto px-10 w-full fixed top-0 z-40"
+      style={{ backgroundColor, position: 'fixed', width: '100vw' }}
+    >
       {/* <div className="container mx-auto px-10 mb-8 sticky top-0 z-40 bg-slate-100"> */}
       <div className=" w-full inline-block  py-8">
         <div className="md:float-left block">

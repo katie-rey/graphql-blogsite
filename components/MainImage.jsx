@@ -6,9 +6,10 @@ const MainImage = () => {
   return (
     <div className="image-container relative">
       <div
-        className="main-image h-[50rem] w-full mx-0 mb-8 
+        className="main-image h-[50rem] w-full mx-0 mb-14 
        bg-slate-100"
       ></div>
+
       <div className="main-copy absolute col-white text-white h-56 grid grid-row-3 gap-4 content-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <h1 className="transition duration-700 text-center mb-2 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
           Follow our adventures
