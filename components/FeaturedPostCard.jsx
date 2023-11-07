@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { graphCMSImageLoader } from '../util'
 
 const FeaturedPostCard = ({ post }) => (
-  <div className="bg-white shadow-lg p-0 lg:p-8 pb-12 mb-8">
+  <div className="bg-white shadow-lg p-0 lg:p-0 pb-12 mb-8">
     <div className="relative overflow-hidden shadow-md pb-80 mb-6">
       <img
         src={post.featuredImage.url}
@@ -15,10 +15,10 @@ const FeaturedPostCard = ({ post }) => (
       />
     </div>
 
-    <h1 className="transition duration-700 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
+    <h1 className="transition duration-700 text-center mb-8 cursor-pointer hover:text-green-600 text-2xl font-light">
       <Link href={`/post/${post.slug}`}>{post.title}</Link>
     </h1>
-    <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
+    {/* <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
       <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 items-center">
         <Image
           unoptimized="true"
@@ -50,14 +50,14 @@ const FeaturedPostCard = ({ post }) => (
         </svg>
         <span className="align-middle">{moment(post.createdAt).format('MMM DD, YYYY')}</span>
       </div>
-    </div>
+    </div> */}
     <p className="text-center text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8">
       {post.excerpt}
     </p>
-    <div className="text-center">
+    <div className="text-center mb-8">
       <Link href={`/post/${post.slug}`}>
-        <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-pink-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
-          Continue Reading
+        <span className="transition duration-500 ease transform hover:-translate-y-1 inline-block border-2 border-green-600 text-lg font-light rounded-full  px-8 py-3 cursor-pointer">
+          Discover
         </span>
       </Link>
     </div>

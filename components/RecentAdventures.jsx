@@ -23,12 +23,12 @@ const RecentAdventures = ({ posts }) => {
 
   return (
     <div className="image-container relative">
-      <h1 className="mb-14 text-center text-3xl ">OUR RECENT ADVENTURES</h1>
+      <h1 className="mb-14 text-center text-3xl font-light">OUR RECENT ADVENTURES</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {featuredPosts.map((post, index) => (
-          <div className="grid-col-1 lg:col-span-4">
-            <div className="flex flex-col lg:col-span-4 ">
+          <div className="grid-col-1 lg:col-span-3">
+            <div className="flex flex-col lg:col-span-3 ">
               <FeaturedPostCard post={post} key={index} />
             </div>
           </div>
