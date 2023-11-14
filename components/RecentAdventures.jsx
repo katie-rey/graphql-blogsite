@@ -27,7 +27,7 @@ const RecentAdventures = ({ posts }) => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {featuredPosts.map((post, index) => (
-          <div className="grid-col-1 lg:col-span-3">
+          <div key={index} className="grid-col-1 lg:col-span-3">
             <div className="flex flex-col lg:col-span-3 ">
               <FeaturedPostCard post={post} key={index} />
             </div>
